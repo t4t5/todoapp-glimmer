@@ -1,0 +1,25 @@
+{{! src/ui/components/todo-list/template.hbs }}
+
+<div id="todo-app">
+
+  <ul>
+    {{#each items key="@index" as |item|}}
+      <todo-item
+        @item={{item}}
+        @deleteItem={{action deleteItem}}
+        @toggleItem={{action toggleItem}}
+      />
+    {{/each}}
+  </ul>
+
+  <input 
+    placeholder="New todo"
+    value={{newItemText}}
+    onkeyup={{action updateNewItemText}}
+  />
+
+  <button onclick={{action addItem}}>
+    Add item
+  </button>
+
+</div>

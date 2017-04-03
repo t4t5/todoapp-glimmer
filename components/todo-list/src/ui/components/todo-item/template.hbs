@@ -1,0 +1,14 @@
+{{! src/ui/components/todo-item/template.hbs }}
+
+<li>
+  <p 
+    data-checked={{@item.isDone}}
+    onclick={{action toggle}}
+  >
+    {{@item.text}}
+  </p>
+
+  <button onclick={{action delete}}>
+    Delete item
+  </button>
+</li>
