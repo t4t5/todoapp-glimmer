@@ -48,12 +48,12 @@ export default class TodoList extends Component {
     this.items = items;
   }
 
-  toggleItem(toggleItem) {
+  toggleItem(toggledItem) {
     let items = this.items.map(item => {
-      if (item.text === toggleItem.text) {
+      if (item.text === toggledItem.text) {
         return Object.assign(item, {
           isDone: !item.isDone,
-        }, item);
+        });
       } else {
         return item;
       }
